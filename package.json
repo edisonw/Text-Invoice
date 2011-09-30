@@ -1,0 +1,16 @@
+{
+    "name": "application-name"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.4.3"    
+    , "stylus": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
+    , "mongodb": ">= 0.9.6-7"
+    , "underscore": ">=1.1.7"
+    , "underscore.string": ">=1.1.5"
+    , "request" : ">=2.0.2"
+    , "step " : ">=0.0.4"
+    , "hashlib" : ">=1.0.1"
+  }
+}

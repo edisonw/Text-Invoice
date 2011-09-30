@@ -1,0 +1,136 @@
+div(id='wrapper')
+	div(id='topbar',class='clearfix')
+		a(href='/',class='logo')
+			span Text Invoice Service
+		div(class='user_box around_all')
+			img(src='public/images/profile.jpg',width='55',alt='Profile Pic')
+			h2 Administrator
+			h3
+				a(class='text_shadow',href='#') Edison Wang
+			ul
+				li
+					a(href='#') profile
+					span(class='divider') |
+				li
+					a(href='#') logout
+	div(id='sidebar')
+		div(class='cog') +
+		a(href='/',class='logo')
+			span Text Invoice Service
+		div(class='user_box round_all clearfix')
+			img(src='public/images/profile.jpg',width='55',alt='Profile Pic')
+				h2 Administrator
+				h3
+					a(class='text_shadow',href='#') Edison Wang
+				ul
+					li
+						a(href='#') settings
+						span(class='divider') |
+					li
+						a(href='/') logout
+		ul(id='accordion',class='round_all')
+			li
+				a(href='/',class='top_level') Home
+					img(src='public/images/icons/small/grey/home.png')
+			li  
+				a(href='#',class='top_level') Mailbox
+					img(src='public/images/icons/small/grey/mail.png') 
+				ul(class='drawer')
+					li
+						a(href='#') Inbox
+					li
+						a(href='#') Sent Item
+					li  
+						a(href='#') Drafts
+					li  
+						a(href='#') Trash
+		form(id='search_side')
+			input(class='round_all',type='text',value='Search Invoices...',onclick='value=""')
+		ul(id='side_links',class='text_shadow round_all')
+			li
+				a(href='/users') Users
+			li
+				a(href='/transactions') Transactions
+			li
+				a(href='/invoices') Invoices
+	div(id='main_container',class='main_container container_16 clearfix')
+		div(id='nav_top',class='clearfix round_top')
+			ul(class='clearfix round_all')
+				li(class='current')
+					a(href='/') Dashboard
+						img(src='public/images/icons/small/white/laptop.png')
+				li
+					a(href='/invoices') Invoices
+						img(src='public/images/icons/small/grey/frames.png')
+		div(class='flat_area grid_16')
+			h2 Dashboard
+			p Try this invocie table out, and I am sure that you will like it. :)
+		div(class='box grid_16 round_all tabs') 
+			ul(id='touch_sort',class='tab_header grad_colour round_top clearfix') 
+				li 
+					a(href='#tabs-0',class='round_top') Summary 
+				li
+					a(href='#tabs-1',class='round_top') Users 
+				li
+					a(href='#tabs-2',class='round_top') Transactions
+				li
+					a(href='#tabs-3',class='round_top') Invoices
+			a(href='#',class='grabber') &nbsp; 
+			a(href='#',class='toggle') &nbsp; 
+			div(class='toggle_container') 
+				div(id='tabs-0',class='block') 
+					p Click On the other tabs to view debugging data.
+				div(id='tabs-1',class='block no_padding') 
+					table(id='dt1',class='display datatable') 
+						thead
+							th Phone Number
+							th Activated
+						tbody
+							- each user in users
+								tr 
+									td #{user.p}
+									td #{user.a}
+				div(id='tabs-2',class='block')
+					table(id='dt2',class='display datatable') 
+						thead
+							th Created
+							th id
+							th Phone Number
+							th Message
+							th isFinished
+							th Determined Action
+							th Next Action
+						tbody
+							- each t in transactions
+								tr 
+									td #{t.c}
+									td #{t._id}
+									td #{t.p}
+									td #{t.m}
+									td #{t.f}
+									td #{t.a}
+									td #{t.n}
+				div(id='tabs-3',class='block')
+					table(id='dt3',class='display datatable') 
+						thead
+							th Date Created
+							th Payer
+							th Receiver
+							th Invoice Maker
+							th Total ($)
+							th Paid
+							th # Line Items
+							th Comment
+						tbody
+							- each i in invoices
+								tr 
+									td #{i.c}
+									td #{i.o}
+									td #{i.b}
+									td #{i.m}
+									td #{i.t}
+									td #{i.p}
+									td #{i.i.length}
+									td #{i.n}
+script(type='text/javascript',src='public/js/DataTables/jquery.dataTables.js')
+script(type='text/javascript',src='public/js/app/dataTable.js')
