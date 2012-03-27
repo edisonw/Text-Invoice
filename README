@@ -1,1 +1,3 @@
-Installation 
+This was a summer project I worked on to make a SMS based QuickBook. Install using the bash script (Mac/Linux compatible).
+
+It runs on Mongodb, Nodejs/Expressjs/many node modules, and uses Twilio to send and receive messages. 
