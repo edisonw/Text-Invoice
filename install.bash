@@ -113,7 +113,6 @@ if [[ "${responsta:0:1}" != "Y" && "${responsta:0:1}" != "y" ]];
 then
 	echo "Skipping App Installation."
 else
-	echo "If you have permission from, this will download the version 1 of the code, else please ignore the rest and use the code from P4V"
 	if git clone git@github.com:wzsddtc2/Text-Invoice.git
 	then
 		cd Text-Invoice
