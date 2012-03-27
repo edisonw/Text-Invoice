@@ -6,7 +6,6 @@ if [[ "${responsta:0:1}" != "Y" && "${responsta:0:1}" != "y" ]];
 then
 	echo "Skipping Package Mangement Checks."
 else
-echo "You might need Intuit VPN enabled for this script"
 echo "Checking Homebrew (Update/Install)"
 if /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
 then 
