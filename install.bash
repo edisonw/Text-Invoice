@@ -114,9 +114,9 @@ then
 	echo "Skipping App Installation."
 else
 	echo "If you have permission from, this will download the version 1 of the code, else please ignore the rest and use the code from P4V"
-	if git clone git@github.com:wzsddtc2/Quickbooks-China.git
+	if git clone git@github.com:wzsddtc2/Text-Invoice.git
 	then
-		cd Quickbooks-China
+		cd Text-Invoice
 		npm install -g express
 		npm install -d
 		npm install -g run
